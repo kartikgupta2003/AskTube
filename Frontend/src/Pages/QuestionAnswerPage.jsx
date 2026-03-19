@@ -27,13 +27,14 @@ const QuestionAnswerPage = () => {
     const [answer, setAnswer] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const bottomRef = useRef(null);
+    const API = import.meta.env.VITE_API_URL;
     // console.log("hi")
 
     useEffect(() => {
         const fetch_thumbnail = async () => {
             try {
                 // console.log("This was called")
-                const { data } = await axios.get(`http://localhost:8000/video/${id}`)
+                const { data } = await axios.get(`${API}video/${id}`)
                 // console.log(data)
                 setVideoInfo(data)
                 setError("")
@@ -65,7 +66,7 @@ const QuestionAnswerPage = () => {
                     "Content-type": "application/json"
                 },
             }
-            const { data } = await axios.post(`http://localhost:8000/ai/${id}` , body , config)
+            const { data } = await axios.post(`${API}ai/${id}` , body , config)
             setIsLoading(false)
             setAnswer(data)
         } catch (err) {
