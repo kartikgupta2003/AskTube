@@ -1,0 +1,16 @@
+# ================= BACKEND =================
+Backend/venv/
+Backend/__pycache__/
+Backend/*.pyc
+Backend/.env
+
+# ================= FRONTEND =================
+Frontend/node_modules/
+Frontend/dist/
+
+# ================= COMMON =================
+.env
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
