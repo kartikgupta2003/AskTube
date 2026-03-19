@@ -6,7 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",   # Vite frontend
+    "http://localhost:5173",   # Vite frontend 
+    "https://ask-tube.vercel.app/search/eRM2reLxN5k" #vercel frontend
 ]
 
 app.add_middleware(
