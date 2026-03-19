@@ -8,7 +8,7 @@ from fastapi import HTTPException
 
 
 def fetch_thumbnail(videoId : str):
-        api_key = os.getenv("YOUTUBE_API_KEY")
+        api_key = os.getenv("YOUTUBE_API_KEY")  #dotenv doesn't work in production
         url = f"https://www.googleapis.com/youtube/v3/videos?part=snippet&id={videoId}&key={api_key}"
         
         data = requests.get(url).json()

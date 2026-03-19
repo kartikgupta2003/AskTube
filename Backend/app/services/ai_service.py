@@ -7,8 +7,11 @@ from langchain_core.runnables import RunnableSequence , RunnableLambda
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain.messages import HumanMessage , AIMessage
+import os
 
 load_dotenv()
+
+api_key = os.getenv("GEMINI_API_KEY")  #dotenv doesn't work in production
 
 splitter = RecursiveCharacterTextSplitter(
     chunk_size = 500 ,
@@ -16,7 +19,8 @@ splitter = RecursiveCharacterTextSplitter(
 )
 
 embedding =GoogleGenerativeAIEmbeddings(
-    model="gemini-embedding-001"
+    model="gemini-embedding-001" ,
+    api_key=api_key
 )
 
 vector_store_cache={}
@@ -43,7 +47,8 @@ prompt=PromptTemplate(
 )
 
 model = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash"
+    model="gemini-2.5-flash" ,
+    api_key=api_key
 )
 
 parser = StrOutputParser()
