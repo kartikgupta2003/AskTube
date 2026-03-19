@@ -7,7 +7,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:5173",   # Vite frontend 
-    "https://ask-tube.vercel.app/search/eRM2reLxN5k" #vercel frontend
+    "https://ask-tube.vercel.app" #vercel frontend
 ]
 
 app.add_middleware(
