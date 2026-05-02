@@ -71,7 +71,7 @@ const QuestionAnswerPage = () => {
             setAnswer(data)
         } catch (err) {
             window.scrollTo({ top: 0, behavior: "smooth" });
-            // console.log("error aya hai ",err)
+            console.log("error aya hai ",err)
             setIsLoading(false)
             setAnswer("")
             return toast.error("Internal Server Error");
